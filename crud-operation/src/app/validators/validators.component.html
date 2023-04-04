@@ -1,0 +1,180 @@
+<!-- <div class="container" style="display: flex; justify-content: center;">
+    <h1>
+        Personal Information
+    </h1>
+</div>
+<div class="container">
+<form [formGroup]="dataForm" class="form-container" style="display: flex; justify-content: center;">
+    <div class="row" style="text-align: center;">
+      <div class="col-lg-6">
+        <mat-form-field appearance="standard" style="width: 75%;">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" formControlName="name" placeholder="Enter Name">
+        </mat-form-field>
+      </div>
+      <div class="col-lg-6">
+        <mat-form-field appearance="standard" style="width: 75%;">
+          <mat-label>Number</mat-label>
+          <input matInput type="number" formControlName="number" placeholder="Placeholder">
+        </mat-form-field>
+        <span class="error" *ngIf="number.invalid && number.touched">Not a valid number</span>
+      </div>
+      <div class="col-lg-6">
+        <mat-form-field appearance="standard" style="width: 75%;">
+          <mat-label>Address</mat-label>
+          <input matInput type="text" formControlName="address" placeholder="Placeholder">
+        </mat-form-field>
+        <span class="error" *ngIf="address.invalid && address.touched">Not a valid address</span>
+      </div>
+      <div class="col-lg-6">
+        <mat-form-field appearance="standard" style="width: 75%;">
+          <mat-label>Age</mat-label>
+          <input matInput type="number" formControlName="age" placeholder="Placeholder">
+        </mat-form-field>
+      </div>
+      <div class="col-lg-6">
+        <mat-form-field appearance="standard" style="width: 75%;">
+            <mat-label>Password</mat-label>
+            <input matInput type="password"  formControlName="password" placeholder="Placeholder" [type]="hide ? 'password':'text'">
+            <i class="material-icons" matSuffix (click)="hide = !hide">
+                {{hide ? 'visibility' : 'visibility_off'}}
+            </i>
+        </mat-form-field>
+        <span class="error" *ngIf="password.invalid && password.touched">Not a valid password</span>
+    </div>
+    <div class="col-lg-6">
+        <mat-form-field appearance="standard" style="width: 75%;">
+          <mat-label>email</mat-label>
+          <input matInput type="email" formControlName="email" placeholder="Placeholder">
+        </mat-form-field>
+        <span class="error" *ngIf="email.invalid && email.touched">Not a valid email</span>
+      </div>
+    <div class="col-lg-6">
+        <mat-form-field appearance="standard" style="width: 75%;">
+          <mat-label>DOB</mat-label>
+          <input matInput type="date" formControlName="dob" placeholder="Enter DOB">
+        </mat-form-field>
+      </div>
+
+      <div class="col-lg-6">
+      <ng-container matColumnDef="city">
+        <th mat-header-cell *matHeaderCellDef> City </th>
+        <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+      </ng-container>
+    </div>
+      
+      <div class="col-lg-6">
+        <mat-radio-group aria-label="Select an option" formControlName="gender">
+            <mat-radio-button value="male" >Male</mat-radio-button>
+            <mat-radio-button value="female" style="margin-left: 25px;">Female</mat-radio-button>
+          </mat-radio-group>
+      </div>
+
+      <hr class="style-one">
+
+      <div class="col-lg-12" style="display: flex; ju<div class="container" style="display: flex; justify-content: center;">
+    <h1>
+        Personal Information
+    </h1>
+</div>
+<div class="container">
+<form [formGroup]="dataForm" class="form-container" style="display: flex; justify-content: center;">
+    <div class="row" style="text-align: center;">
+      <div class="col-lg-6">
+        <mat-form-field appearance="standard" style="width: 75%;">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" formControlName="name" placeholder="Enter Name">
+        </mat-form-field>
+      </div>
+      <div class="col-lg-6">
+        <mat-form-field appearance="standard" style="width: 75%;">
+          <mat-label>Number</mat-label>
+          <input matInput type="number" formControlName="number" placeholder="Placeholder">
+        </mat-form-field>
+        <span class="error" *ngIf="number.invalid && number.touched">Not a valid number</span>
+      </div>
+      <div class="col-lg-6">
+        <mat-form-field appearance="standard" style="width: 75%;">
+          <mat-label>Address</mat-label>
+          <input matInput type="text" formControlName="address" placeholder="Placeholder">
+        </mat-form-field>
+        <span class="error" *ngIf="address.invalid && address.touched">Not a valid address</span>
+      </div>
+      <div class="col-lg-6">
+        <mat-form-field appearance="standard" style="width: 75%;">
+          <mat-label>Age</mat-label>
+          <input matInput type="number" formControlName="age" placeholder="Placeholder">
+        </mat-form-field>
+      </div>
+      <div class="col-lg-6">
+        <mat-form-field appearance="standard" style="width: 75%;">
+            <mat-label>Password</mat-label>
+            <input matInput type="password"  formControlName="password" placeholder="Placeholder" [type]="hide ? 'password':'text'">
+            <i class="material-icons" matSuffix (click)="hide = !hide">
+                {{hide ? 'visibility' : 'visibility_off'}}
+            </i>
+        </mat-form-field>
+        <span class="error" *ngIf="password.invalid && password.touched">Not a valid password</span>
+    </div>
+    <div class="col-lg-6">
+        <mat-form-field appearance="standard" style="width: 75%;">
+          <mat-label>email</mat-label>
+          <input matInput type="email" formControlName="email" placeholder="Placeholder">
+        </mat-form-field>
+        <span class="error" *ngIf="email.invalid && email.touched">Not a valid email</span>
+      </div>
+    <div class="col-lg-6">
+        <mat-form-field appearance="standard" style="width: 75%;">
+          <mat-label>DOB</mat-label>
+          <input matInput type="date" formControlName="dob" placeholder="Enter DOB">
+        </mat-form-field>
+      </div>
+
+      <div class="col-lg-6">
+      <ng-container matColumnDef="city">
+        <th mat-header-cell *matHeaderCellDef> City </th>
+        <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+      </ng-container>
+    </div>
+      
+      <div class="col-lg-6">
+        <mat-radio-group aria-label="Select an option" formControlName="gender">
+            <mat-radio-button value="male" >Male</mat-radio-button>
+            <mat-radio-button value="female" style="margin-left: 25px;">Female</mat-radio-button>
+          </mat-radio-group>
+      </div>
+
+      <hr class="style-one">
+
+      <div class="col-lg-12" style="display: flex; justify-content: start; margin-left: 60px;">
+      <button mat-raised-button color="primary" [disabled]="dataForm.invalid" type="submit" (click)="submitData()" style="width: 100px; padding: 10px; border-radius: 30px;">Submit</button>
+
+      <hr class="style-one">
+
+    </div>
+    </div> 
+  </form>
+</div>stify-content: start; margin-left: 60px;">
+      <button mat-raised-button color="primary" [disabled]="dataForm.invalid" type="submit" (click)="submitData()" style="width: 100px; padding: 10px; border-radius: 30px;">Submit</button>
+
+      <hr class="style-one">
+
+    </div>
+    </div> 
+  </form>
+</div> -->
+
+<div class="container">
+  <form [formGroup]="emailForm">
+    <div class="col-lg-12">
+      <mat-form-field appearance="standard" style="width: 75%;">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="emails" placeholder="Enter e-mail">
+      </mat-form-field>
+    </div>
+
+  <button mat-raised-button color="primary" [disabled]="emailForm.invalid" type="submit" (click)="submitData()" >Submit</button>
+  <hr class="style-one">
+
+  </form>
+</div>

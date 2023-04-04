@@ -1,0 +1,119 @@
+<form [formGroup]="dataForm" class="form-container" style="display: flex; justify-content: center;">
+  <div class="row">
+    <!-- <div class="col-md-6">
+      <ng-container matColumnDef="indexNum">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let i = index"> <span class="heading">No.</span>
+          {{i+1}} </td>
+      </ng-container>
+    </div> -->
+    <div class="col-md-6">
+      <mat-form-field appearance="standard"  style="width: 75%;">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="name" placeholder="Enter Name">
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field appearance="standard"  style="width: 75%;">
+        <mat-label>Age</mat-label>
+        <input matInput type="text" formControlName="age" placeholder="Enter Age">
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field appearance="standard"  style="width: 75%;">
+        <mat-label>Number</mat-label>
+        <input matInput type="number" formControlName="number" placeholder="Placeholder">
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field appearance="standard"  style="width: 75%;">
+        <mat-label>Address</mat-label>
+        <input matInput type="text" formControlName="address" placeholder="Placeholder">
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field appearance="standard"  style="width: 75%;">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" placeholder="Placeholder">
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field appearance="fill"  style="width: 75%;">
+        <mat-label>City</mat-label>
+        <mat-select [formControl]="city" (ngModelChange)="ngChange()" name="food">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let city of cities" [value]="city.value">
+            {{city.label}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" [disabled]="dataForm.invalid" type="submit"
+      (click)="submitData()">Submit
+    </button>
+  </div>
+</form>
+
+<div style="display: flex; justify-content: center;">
+  <mat-form-field style="width: 75%;">
+    <mat-label>Filter</mat-label>
+  <input #item value="" matInput class="form-control" type="text" (input)="Search(item.value)" placeholder="Enter Name to search">
+</mat-form-field>
+</div>
+<div style="display: flex; justify-content: center;">
+  <table #MatTable mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 75%;">
+
+    <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef> Age </th>
+      <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef> Current Address </th>
+      <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+    </ng-container>
+
+    <!-- number Column -->
+    <ng-container matColumnDef="number">
+      <th mat-header-cell *matHeaderCellDef> Number </th>
+      <td mat-cell *matCellDef="let element"> {{element.number}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="password">
+      <th mat-header-cell *matHeaderCellDef> Password </th>
+      <td mat-cell *matCellDef="let element"> {{element.password}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef> City </th>
+      <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let i=index; let element">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="update(element)">edit</mat-icon>
+        <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="deletedata(i)">delete</mat-icon>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

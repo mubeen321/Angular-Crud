@@ -1,0 +1,74 @@
+<script>
+  document.onkeydown = function (e) {
+    if (event.keyCode == 123) {
+      return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+      return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+      return false;
+    }
+    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+      return false;
+    }
+  }
+</script>
+<div class="container" oncontextmenu="return false;">
+  <!-- <div>
+    <input type="text" #data>
+    <button (click)='add(data)'>click to add</button>
+    <p *ngFor="let d of i">{{d}}</p>
+  </div> -->
+
+  <div>
+    <form [formGroup]="formGroup">
+    <mat-form-field class="example-full-width" formControlName="formCon">
+      <mat-label>Click</mat-label>
+      <input matInput #data>
+    </mat-form-field>
+    <button mat-mini-fab color="accent" (click)='add(data)' aria-label="Example icon button with a plus one icon">
+      <mat-icon>plus_one</mat-icon>
+    </button>
+    <p *ngFor="let d of i">[ {{d}} ]</p>
+  </form>
+  </div>
+  <div class="row" style="margin-top: 25px;">
+
+    <div class="col-lg-6">
+      <pre><h1>Array</h1><p>Og Array : [ {{arrrr}} ]</p>
+                <p>After filtering : {{fil}}</p>
+                <p>After Mapping : {{mapp}}</p>
+                <p>After Reducing : {{reddd}}</p>
+            <p>Summation of positive values : {{ress}}</p>
+
+            <!-- <button #btn class="btn btn-primary" (click)="onClick()">Click</button>
+            <div class="row">
+            <div class="col-lg-3">
+              <ul>
+                <li>dhiarya</li>
+              </ul>
+            </div>
+            <div class="col-lg-3">
+              <ul>
+                <li>shelar</li>
+              </ul>
+            </div>
+            </div> -->
+          </pre>
+          <div>
+            <button>click</button> <br><br>            
+            <button (click)="click2()">click 2</button>
+          </div>
+    </div>
+
+    <div class="col-lg-6">
+      <pre><h1>Object</h1><p>Og Array of Object : {{arr|json}}</p>
+                <p>Salary : {{obj|json}}</p>
+                <!-- <p>Objj : {{objj|json}}</p> -->
+
+            </pre>
+    </div>
+  </div>
+
+</div>
